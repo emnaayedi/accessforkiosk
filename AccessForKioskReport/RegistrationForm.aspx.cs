@@ -38,7 +38,7 @@ namespace AccessForKioskReport
                 CONTAINER_NAME= Request.QueryString["container"].ToString();
                 Azure.Storage.Sas.BlobSasBuilder blobSasBuilder = new Azure.Storage.Sas.BlobSasBuilder()
                 {
-                    BlobContainerName = "drillmax-soak-test-reports",
+                    BlobContainerName = CONTAINER_NAME,
                     BlobName = FILE_NAME,
                     ExpiresOn = DateTime.UtcNow.AddMinutes(1),//Let SAS token expire after 1 minute.
                 };
