@@ -84,7 +84,7 @@ namespace AccessForKioskReport
 
                 }
 
-                Response.Redirect("RedirectToPDF.aspx?pdf=" + FILE_NAME); ;
+                Response.Redirect("RedirectToPDF.aspx?pdf=" + FILE_NAME+"&container="+CONTAINER_NAME); ;
 
 
 
