@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "storage1": {
+      "restored": true,
+      "restoreTime": "2022-09-09T15:12:18.724601Z"
+    },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2022-09-09T15:12:04.4827246Z"
+    }
+  },
+  "parameters": {
+    "storage1.resourceGroupName": {
+      "Name": "storage1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "DefaultResourceGroup-CUS"
+    },
+    "storage1.subscriptionId": {
+      "Name": "storage1.subscriptionId",
+      "Type": "subscription",
+      "Value": "ef0fbc28-ed28-4f81-8089-221b1984dd33"
+    }
+  }
+}
