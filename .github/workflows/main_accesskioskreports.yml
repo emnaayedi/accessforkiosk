@@ -40,6 +40,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
@@ -52,5 +53,5 @@ jobs:
         with:
           app-name: 'AccessKioskReports'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8F7447E40C974B3F82D5FA271FECBDA6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_252FD4D3825D4FDC9A56C9F9714C144E }}
           package: .
