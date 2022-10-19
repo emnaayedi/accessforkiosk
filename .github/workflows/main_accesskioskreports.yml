@@ -16,25 +16,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '4.8.x'
-          include-prerelease: true
+      - name: Setup MSBuild path
+        uses: microsoft/setup-msbuild@v1.0.2
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.5
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      - name: Restore NuGet packages
+        run: nuget restore
+
+      - name: Publish to folder
+        run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
-
-
+          name: ASP-app
+          path: '/published/**'
 
   deploy:
     runs-on: windows-latest
@@ -53,7 +51,8 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'AccessKioskReports'
+          app-name: 'AccessForKioskReport'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8F7447E40C974B3F82D5FA271FECBDA6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_59397CF20F4F456ABACDC0C37B441C7B }}
           package: .
+
