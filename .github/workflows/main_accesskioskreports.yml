@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'AccessKioskReports'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_76D3B943CF8A4A979F88FB31ECFEC1E9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E6BA2ADF6B2E4145B133B28879FF017D }}
           package: .
