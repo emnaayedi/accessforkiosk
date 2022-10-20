@@ -21,7 +21,7 @@
     <div class="content container-fluid">
           <div class="inline-block d-flex  justify-content-center">
          <img  id="Aquila" src="/images/aquila-logo.png" />
-                <img  id="Edge" src="/images/aquila.png" />
+                <img  id="Edge" src="/images/dpt logo.png" />
             </div>
                                      
 

@@ -239,8 +239,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\aquila-logo.png" />
-    <Content Include="images\aquila.png" />
     <Content Include="images\back.png" />
+    <Content Include="images\dpt logo.png" />
     <Content Include="images\lock.png" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.css" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.min.css" />
